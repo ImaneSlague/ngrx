@@ -1,0 +1,27 @@
+
+<section >
+  <form  ngForm="form" style="height: 100px;" style="margin-top: -25px;">
+    <!-- (submit)="createPost() "  -->
+ <br>
+    <br>
+    <mat-form-field >
+      <textarea matInput   name="Txt" cols="20"></textarea>
+      <!-- [(ngModel)]="reponsserv.reponses.txtReponse" -->
+    </mat-form-field>
+    <br>
+      <input matInput placeholder="user"  *ngIf="!iscolled" name="IdUtilisateur">
+      <!-- [(ngModel)]="reponsserv.reponses.idUtilisateur"  -->
+    <br>
+      <input matInput placeholder="IdDemande" *ngIf="!iscolled" name="IdDemande" [disabled]="'disabled'" >
+      <input matInput  placeholder="Popup disabled"  *ngIf="!iscolled" name="DateReponse" disabled>
+      <!-- {{dateReponse | date:'yyyy-MM-dd'}} -->
+      <!-- [(ngModel)]="this.reponsserv.reponses.dateReponse"  -->
+      <button  type="submit" class="p" (click)="togglecolsave" style="margin-top: -90px; margin-left: 260px;background-color: transparent;float: left;border-color: transparent; " >
+      <i class="material-icons" style="color: #0080ff;">
+        send
+        </i>
+    </button>
+    
+  </form>
+</section>
+

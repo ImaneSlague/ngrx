@@ -1,0 +1,50 @@
+ <app-navbar></app-navbar>
+
+<!--<div *ngFor="let item of list">
+    <h2>{{item.txt}}</h2>
+</div> -->
+
+ 
+
+<section style="margin-top: -900px;">
+    <div class="container">
+     <div class="row align-items-center">
+         <mat-card style="width: 800px;"  *ngFor="let item of list" >
+           <!-- (click)="fillData(item)" -->
+           <div>
+           <mat-card-content  >
+             <div class="blog-image" style="width: 80%;margin: 0 auto; margin-top: 20px;">
+             <img mat-card-image [src]="'data:image/jpeg;base64,'+item.attachmentFile">
+             </div>
+             <h4 style="font-size: 20px; margin-top: 70px;">{{item.txt}}</h4>
+           
+             <p>
+               <small>Posted by  &bull; on {{item.dateCreation | date:"fullDate"}}</small>
+             </p>
+           </mat-card-content>
+           <div class="blog-content btn ">
+            <a mat-raised-button color="accent"  (click)="togglecolll(item)" style="margin-left: -20px;">  <i class="material-icons">
+             add_circle
+             </i></a>
+          
+           </div>
+           <div class="blog-content btn ">
+
+           <button mat-raised-button color="accent" (click)="togglecoll(item,list.demandes) " >
+       
+            <!-- (mouseenter)="closeAll()" -->
+             <i class="material-icons">
+               chat_bubble
+               </i>
+           </button>
+           </div>
+       </div>
+       <app-reponses *ngIf="item.iscolledd " ></app-reponses>
+       <app-reponse-list *ngIf="item.iscolled"></app-reponse-list>
+
+         </mat-card>
+       
+     </div>
+    </div>
+   </section>
+        
